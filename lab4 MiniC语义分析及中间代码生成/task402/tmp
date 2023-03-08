@@ -1,0 +1,32 @@
+; ModuleID = 'test'
+source_filename = "test"
+
+declare i32 @putchar(i32)
+
+declare i32 @getchar()
+
+define i32 @main() {
+entry:
+  %a = alloca i32
+  %callgetchar = call i32 @getchar()
+  store i32 %callgetchar, i32* %a
+  %a1 = load i32, i32* %a
+  %comp = icmp eq i32 %a1, 97
+  %cond = icmp ne i1 %comp, false
+  br i1 %cond, label %then, label %else
+
+then:                                             ; preds = %entry
+  store i32 89, i32* %a
+  %a2 = load i32, i32* %a
+  %callputchar = call i32 @putchar(i32 %a2)
+  br label %ifcont
+
+else:                                             ; preds = %entry
+  store i32 78, i32* %a
+  %a3 = load i32, i32* %a
+  %callputchar4 = call i32 @putchar(i32 %a3)
+  br label %ifcont
+
+ifcont:                                           ; preds = %else, %then
+  ret i32 97
+}

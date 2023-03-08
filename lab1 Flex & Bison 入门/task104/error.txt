@@ -1,0 +1,2 @@
+flex lab104.l
+gcc -o scanner lex.yy.c -lfl

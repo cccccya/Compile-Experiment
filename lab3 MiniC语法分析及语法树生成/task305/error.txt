@@ -1,0 +1,5 @@
+g++  -o parser.o parser.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -lpthread -ldl -c 
+g++  -o token.o token.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -lpthread -ldl -c 
+g++  -o astnode.o astnode.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -lpthread -ldl -c 
+g++  -o main.o main.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -lpthread -ldl -c 
+g++ -o minic parser.o token.o astnode.o main.o  -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -lfl -lstdc++  -lpthread -ldl

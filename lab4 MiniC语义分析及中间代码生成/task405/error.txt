@@ -1,0 +1,13 @@
+g++  -o parser.o parser.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -L/usr/lib/llvm-10/lib  -lLLVM-10  -c 
+g++  -o token.o token.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -L/usr/lib/llvm-10/lib  -lLLVM-10  -c 
+g++  -o astnode.o astnode.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -L/usr/lib/llvm-10/lib  -lLLVM-10  -c 
+astnode.cpp: In function ‘llvm::Function* getFunction(std::string)’:
+astnode.cpp:70:1: warning: control reaches end of non-void function [-Wreturn-type]
+   70 | }
+      | ^
+astnode.cpp: In member function ‘virtual llvm::Value* NAssignment::codegen()’:
+astnode.cpp:690:1: warning: control reaches end of non-void function [-Wreturn-type]
+  690 | }
+      | ^
+g++  -o main.o main.cpp -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -L/usr/lib/llvm-10/lib  -lLLVM-10  -c 
+g++ -o minic parser.o token.o astnode.o main.o  -I/usr/lib/llvm-10/include -std=c++14   -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -L/usr/lib/llvm-10/lib  -lLLVM-10 

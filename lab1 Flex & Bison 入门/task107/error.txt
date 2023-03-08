@@ -1,0 +1,4 @@
+bison -d lab107.y
+lab107.y: warning: 9 shift/reduce conflicts [-Wconflicts-sr]
+flex lab107.l
+gcc -o scanner lab107.tab.c lex.yy.c -lm -lfl

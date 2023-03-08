@@ -1,0 +1,4 @@
+g++  -o parser.o parser.cpp  -lpthread -ldl -c 
+g++  -o token.o token.cpp  -lpthread -ldl -c 
+g++  -o main.o main.cpp  -lpthread -ldl -c 
+g++ -o minic parser.o token.o main.o   -lfl -lstdc++  -lpthread -ldl
